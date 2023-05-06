@@ -31,7 +31,12 @@ function App() {
     })
       .then(res => res.json())
       .then(data => {
-        console.log('post to server', data)
+        console.log('post to server', data);
+        // 5 updata new user instant on client side
+        const newUser = [...users, data];
+        setUsers(newUser)
+        form.reset();
+
       })
   }
 
